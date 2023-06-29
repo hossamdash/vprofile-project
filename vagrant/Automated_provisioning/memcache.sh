@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo yum update -y
+sudo yum -y install epel-release
 sudo yum install memcached -y
 sudo memcached -p 11211 -U 11111 -u memcached -d
 
