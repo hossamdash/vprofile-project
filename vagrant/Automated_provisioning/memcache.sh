@@ -1,7 +1,8 @@
 #!/bin/bash
-sudo yum install epel-release -y
+sudo yum update -y
 sudo yum install memcached -y
-sudo systemctl start memcached
-sudo systemctl enable memcached
-sudo systemctl status memcached
 sudo memcached -p 11211 -U 11111 -u memcached -d
+
+sudo firewall-cmd --zone=public --add-port=11211/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=11111/udp --permanent
+sudo firewall-cmd --reload
