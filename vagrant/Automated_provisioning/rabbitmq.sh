@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo yum update -y
+sudo yum -y install epel-release
 sudo yum install rabbitmq-server -y
 
 sudo systemctl start rabbitmq-server
